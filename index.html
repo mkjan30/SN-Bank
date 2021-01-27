@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <!-- iPhone -->
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="image/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+                     <!-- iPhone Price -->
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default minus-btn"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center" id="quantity" value="1">
+                           <button class="btn btn-default plus-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$1219</h5>
+                        <img src="image/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+               <!-- iPhone silicon Case -->
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="image/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button class="btn btn-default negative"><i class="fas fa-minus"></i></button>
+                           <input type="text" class="form-control text-center" id="products" value="1">
+                           <button class="btn btn-default  positive"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <!-- iPhone 11 Silicone Case - Black price -->
+                        <h5>$59</h5>
+                        <img src="image/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$1,278</h5>
+                        <h5>$0</h5>
+                        <h5>$1,278</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+<!-- Its for iPhone -->
+<script>
+    // setting default attribute to disabled to minus button
+    document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+    // taking value to increment decrement value
+    var valueCount
+    // plus-btn button
+    document.querySelector(".plus-btn"). addEventListener("click", function(){
+    // getting value of input
+       valueCount = document.getElementById('quantity').value
+
+    // input value increment by 1
+       valueCount++;
+    // setting increment value
+       document.getElementById("quantity").value = valueCount
+       if (valueCount > 1){
+          document. querySelector(".minus-btn").removeAttribute("disabled")
+          document. querySelector(".minus-btn").classList.remove("disabled")
+       }
+    })
+
+    // minus-btn button
+    document.querySelector(".minus-btn"). addEventListener("click", function(){
+    // getting value of input
+       valueCount = document.getElementById('quantity').value
+
+    // input value increment by 1
+       valueCount--;
+    // setting increment value
+       document.getElementById("quantity").value = valueCount 
+
+       if (valueCount == 1){
+          document. querySelector(".minus-btn").setAttribute("disabled", "disabled")
+       }
+    })
+
+ </script>
+<!-- Its for iPhone silicon back part -->
+   <script>
+      // setting default attribute to disabled to minus button
+      document.querySelector(".negative").setAttribute("disabled", "disabled");
+      // taking value to increment decrement value
+      var valueCount
+      // positive button
+      document.querySelector(".positive"). addEventListener("click", function(){
+      // getting value of input
+         valueCount = document.getElementById('products').value
+
+      // input value increment by 1
+         valueCount++;
+      // setting increment value
+         document.getElementById("products").value = valueCount
+         if (valueCount > 1){
+            document. querySelector(".negative").removeAttribute("disabled")
+            document. querySelector(".negative").classList.remove("disabled")
+         }
+      })
+
+      // Negative button
+      document.querySelector(".negative"). addEventListener("click", function(){
+      // getting value of input
+         valueCount = document.getElementById('products').value
+
+      // input value increment by 1
+         valueCount--;
+      // setting increment value
+         document.getElementById("products").value = valueCount 
+
+         if (valueCount == 1){
+            document. querySelector(".negative").setAttribute("disabled", "disabled")
+         }
+      })
+
+   </script>
+</body>
+
+</html>
