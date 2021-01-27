@@ -1,0 +1,46 @@
+body{
+    padding: 100px;
+}
+.login-area{
+    display: block;
+}
+.headings{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    color:tomato;
+    font-weight: 900;
+}
+.submit-area{
+    padding: 40px;
+    margin: 50px;
+    text-align: center;
+    box-shadow: 5px 5px 15px gray;
+    border-radius: 15px;
+}
+.submit-area h3{
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.submit-area h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: goldenrod;
+}
+#transaction-area{
+    display: none;
+}
+.deposit{
+    background-color: firebrick;
+}
+.withdraw{
+    background-color: lightseagreen;
+}
+.balance{
+   background-color: peru;
+}
+.status{
+    text-align: center;
+    margin: 0 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
