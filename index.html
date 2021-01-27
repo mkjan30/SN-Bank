@@ -30,7 +30,9 @@
                            <input type="text" class="form-control text-center" id="quantity" value="1">
                            <button class="btn btn-default plus-btn"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <h5 class="totalPrice">
+                            <span id="price">$1219</span>
+                        </h5>
                         <img src="image/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -84,6 +86,16 @@
     document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
     // taking value to increment decrement value
     var valueCount
+
+// taking price value in variable
+    var price = document.getElementById("price")
+
+// price calculation function
+        function priceTotal(){
+        var total = valueCount * price;
+        document.getElementById("price").innerText = total; 
+    }
+
     // plus-btn button
     document.querySelector(".plus-btn"). addEventListener("click", function(){
     // getting value of input
@@ -97,6 +109,9 @@
           document. querySelector(".minus-btn").removeAttribute("disabled")
           document. querySelector(".minus-btn").classList.remove("disabled")
        }
+
+    //calling function
+        priceTotal()
     })
 
     // minus-btn button
@@ -112,6 +127,9 @@
        if (valueCount == 1){
           document. querySelector(".minus-btn").setAttribute("disabled", "disabled")
        }
+
+       //calling function
+       priceTotal()
     })
 
  </script>
@@ -121,6 +139,16 @@
       document.querySelector(".negative").setAttribute("disabled", "disabled");
       // taking value to increment decrement value
       var valueCount
+
+// taking price value in variable
+    var price = document.getElementById("price")
+
+// price calculation function
+        function priceTotal(){
+        var total = valueCount * "price";
+        console.log("he call you");
+        // document.getElementById("price").innerText = total; 
+    }
       // positive button
       document.querySelector(".positive"). addEventListener("click", function(){
       // getting value of input
