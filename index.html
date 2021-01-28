@@ -30,9 +30,7 @@
                            <input type="text" class="form-control text-center" id="quantity" value="1">
                            <button class="btn btn-default plus-btn"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5 class="totalPrice">
-                            <span id="price">$1219</span>
-                        </h5>
+                        <h5 id="price">$1219</h5>
                         <img src="image/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -51,7 +49,7 @@
                            <button class="btn btn-default  positive"><i class="fas fa-plus"></i></button>
                         </div>
                         <!-- iPhone 11 Silicone Case - Black price -->
-                        <h5>$59</h5>
+                        <h5 id="backPartPrice">$59</h5>
                         <img src="image/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -79,107 +77,111 @@
             </div>
          </div>
       </div>
+
+      <!-- Its for iPhone -->
+      <script>
+         // setting default attribute to disabled to minus button
+         document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
+         // taking value to increment decrement value
+         var valueCount
+
+         // taking price value in variable
+         var price = document.getElementById("price")
+
+         // price calculation function
+         function totalPrice() {
+            var total = valueCount * 1219;
+            document.getElementById("price").innerText = "$" + total;
+         }
+
+         // plus-btn button
+         document.querySelector(".plus-btn").addEventListener("click", function () {
+            // getting value of input
+            valueCount = document.getElementById('quantity').value
+
+            // input value increment by 1
+            valueCount++;
+            // setting increment value
+            document.getElementById("quantity").value = valueCount
+            if (valueCount > 1) {
+               document.querySelector(".minus-btn").removeAttribute("disabled")
+               document.querySelector(".minus-btn").classList.remove("disabled")
+            }
+
+            //calling function
+            totalPrice()
+         })
+
+         // minus-btn button
+         document.querySelector(".minus-btn").addEventListener("click", function () {
+            // getting value of input
+            valueCount = document.getElementById('quantity').value
+
+            // input value increment by 1
+            valueCount--;
+            // setting increment value
+            document.getElementById("quantity").value = valueCount
+
+            if (valueCount == 1) {
+               document.querySelector(".minus-btn").setAttribute("disabled", "disabled")
+            }
+
+            //calling function
+            totalPrice()
+         })
+      </script>
+
+
+      <!-- Its for iPhone silicon back part -->
+      <script>
+         // setting default attribute to disabled to minus button
+         document.querySelector(".negative").setAttribute("disabled", "disabled");
+         // taking value to increment decrement value
+         var valueCount
+
+         // taking price value in variable
+         var price = document.getElementById("backPartPrice")
+
+         // price calculation function
+         function priceTotal() {
+            var total = valueCount * 59;
+            document.getElementById("backPartPrice").innerText = "$" + total;
+         }
+         // positive button
+         document.querySelector(".positive").addEventListener("click", function () {
+            // getting value of input
+            valueCount = document.getElementById('products').value
+
+            // input value increment by 1
+            valueCount++;
+            // setting increment value
+            document.getElementById("products").value = valueCount
+            if (valueCount > 1) {
+               document.querySelector(".negative").removeAttribute("disabled")
+               document.querySelector(".negative").classList.remove("disabled")
+            }
+
+            priceTotal()
+         })
+
+         // Negative button
+         document.querySelector(".negative").addEventListener("click", function () {
+            // getting value of input
+            valueCount = document.getElementById('products').value
+            // input value increment by 1
+            valueCount--;
+            // setting increment value
+            document.getElementById("products").value = valueCount
+
+            if (valueCount == 1) {
+               document.querySelector(".negative").setAttribute("disabled", "disabled")
+            }
+
+            priceTotal()
+         })
+      </script>
+
    </section>
-<!-- Its for iPhone -->
-<script>
-    // setting default attribute to disabled to minus button
-    document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
-    // taking value to increment decrement value
-    var valueCount
-
-// taking price value in variable
-    var price = document.getElementById("price")
-
-// price calculation function
-        function priceTotal(){
-        var total = valueCount * price;
-        document.getElementById("price").innerText = total; 
-    }
-
-    // plus-btn button
-    document.querySelector(".plus-btn"). addEventListener("click", function(){
-    // getting value of input
-       valueCount = document.getElementById('quantity').value
-
-    // input value increment by 1
-       valueCount++;
-    // setting increment value
-       document.getElementById("quantity").value = valueCount
-       if (valueCount > 1){
-          document. querySelector(".minus-btn").removeAttribute("disabled")
-          document. querySelector(".minus-btn").classList.remove("disabled")
-       }
-
-    //calling function
-        priceTotal()
-    })
-
-    // minus-btn button
-    document.querySelector(".minus-btn"). addEventListener("click", function(){
-    // getting value of input
-       valueCount = document.getElementById('quantity').value
-
-    // input value increment by 1
-       valueCount--;
-    // setting increment value
-       document.getElementById("quantity").value = valueCount 
-
-       if (valueCount == 1){
-          document. querySelector(".minus-btn").setAttribute("disabled", "disabled")
-       }
-
-       //calling function
-       priceTotal()
-    })
-
- </script>
-<!-- Its for iPhone silicon back part -->
-   <script>
-      // setting default attribute to disabled to minus button
-      document.querySelector(".negative").setAttribute("disabled", "disabled");
-      // taking value to increment decrement value
-      var valueCount
-
-// taking price value in variable
-    var price = document.getElementById("price")
-
-// price calculation function
-        function priceTotal(){
-        var total = valueCount * "price";
-        console.log("he call you");
-        // document.getElementById("price").innerText = total; 
-    }
-      // positive button
-      document.querySelector(".positive"). addEventListener("click", function(){
-      // getting value of input
-         valueCount = document.getElementById('products').value
-
-      // input value increment by 1
-         valueCount++;
-      // setting increment value
-         document.getElementById("products").value = valueCount
-         if (valueCount > 1){
-            document. querySelector(".negative").removeAttribute("disabled")
-            document. querySelector(".negative").classList.remove("disabled")
-         }
-      })
-
-      // Negative button
-      document.querySelector(".negative"). addEventListener("click", function(){
-      // getting value of input
-         valueCount = document.getElementById('products').value
-
-      // input value increment by 1
-         valueCount--;
-      // setting increment value
-         document.getElementById("products").value = valueCount 
-
-         if (valueCount == 1){
-            document. querySelector(".negative").setAttribute("disabled", "disabled")
-         }
-      })
-
-   </script>
 </body>
 
 </html>
